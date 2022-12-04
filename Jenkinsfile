@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh "echo 'This is something here...'"
+                sh "echo 'This is not something here...'"
             }
         }
     }
