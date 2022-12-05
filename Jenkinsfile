@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh "echo 'testing...'"
                 sh "helm list -n ${namespace}"
-                sh "kubectl get all -n ${namespace} ."
+                sh "kubectl get all -n ${namespace}"
             }
         }
     }
