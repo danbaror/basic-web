@@ -1,3 +1,5 @@
+def release="simple-web"
+def namespace="dan"
 pipeline { 
     agent {
       any { label 'kubectl-pod' }
@@ -10,14 +12,10 @@ pipeline {
                 sh "helm list -n dan"
             }
         }
-        stage('Test'){
-            steps {
-                sh "echo 'Testing...'" 
-            }
-        }
         stage('Deploy') {
             steps {
                 sh "echo 'Deploying...'"
+                sh "helm upgrade --install ${release} -n ${namesapce}"
             }
         }
     }
