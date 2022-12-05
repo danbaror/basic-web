@@ -44,6 +44,8 @@ ingress:
   enabled: true
   name: "simple-web"
   className: "nginx"
+  port: 80
+  path: "dan"
   labels:
     createBy: "Dan Bar-Or"
     CreatedOn: "03-12-2022"
