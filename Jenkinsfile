@@ -8,7 +8,6 @@ pipeline {
         stage('Build') { 
             steps { 
                 sh "echo 'building...'"
-                sh "kubectl -n dan get pods"
                 sh "helm list -n dan"
             }
         }
@@ -16,6 +15,13 @@ pipeline {
             steps {
                 sh "echo 'Deploying...'"
                 sh "helm upgrade --install ${release} -n ${namespace} ."
+            }
+        }
+        stage('test') {
+            steps {
+                sh "echo 'testing...'"
+                sh "helm list -n ${namespace}"
+                sh "kubectl get all -n ${namespace} ."
             }
         }
     }

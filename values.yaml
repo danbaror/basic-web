@@ -42,11 +42,11 @@ service:
 
 ingress:
   enabled: true
-  name: "basic-web"
+  name: "simple-web"
   className: "nginx"
   labels:
     createBy: "Dan Bar-Or"
-    CreatedOn: "02-12-2022"
+    CreatedOn: "03-12-2022"
   annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "false"
