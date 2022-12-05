@@ -17,9 +17,9 @@ pipeline {
                 sh "helm upgrade --install ${release} -n ${namespace} ."
             }
         }
-        stage('test') {
+        stage('Test') {
             steps {
-                sh "echo 'testing...'"
+                sh "echo 'Now testing...'"
                 sh "helm list -n ${namespace}"
                 sh "kubectl get pods -n ${namespace}"
                 sh "kubectl get svc -n ${namespace}"
