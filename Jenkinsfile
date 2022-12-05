@@ -7,7 +7,7 @@ pipeline {
             steps { 
                 sh "echo 'building...'"
                 sh "kubectl -n dan get pods"
-                sh "helm list"
+                sh "helm list -n dan"
             }
         }
         stage('Test'){
