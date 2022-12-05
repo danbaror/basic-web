@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh "echo 'Deploying...'"
-                sh "helm upgrade --install ${release} -n ${namespace}"
+                sh "helm upgrade --install ${release} -n ${namespace} ."
             }
         }
     }
