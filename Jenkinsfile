@@ -1,6 +1,6 @@
 pipeline { 
     agent {
-      kubernetes {
+      none {
         label 'helm-pod'
         containerTemplate {
           name 'helm'
