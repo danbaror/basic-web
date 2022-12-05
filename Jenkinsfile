@@ -14,7 +14,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 sh "echo 'building...'"
-                sh "kubectl get nodes"
+                sh "kubectl get all"
             }
         }
         stage('Test'){
