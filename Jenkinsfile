@@ -21,7 +21,9 @@ pipeline {
             steps {
                 sh "echo 'testing...'"
                 sh "helm list -n ${namespace}"
-                sh "kubectl get all -n ${namespace}"
+                sh "kubectl get pods -n ${namespace}"
+                sh "kubectl get svc -n ${namespace}"
+                sh "kubectl get ingress -n ${namespace}"
             }
         }
     }
