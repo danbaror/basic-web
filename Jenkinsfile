@@ -1,6 +1,6 @@
 pipeline { 
     agent {
-      none {
+      any {
         label 'helm-pod'
         containerTemplate {
           name 'helm'
