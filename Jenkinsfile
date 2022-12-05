@@ -1,14 +1,6 @@
 pipeline { 
     agent {
-      any {
-        label 'helm-pod'
-        containerTemplate {
-          name 'helm'
-          image 'danotoma/helm:3.9.0'
-          ttyEnabled true
-          command 'cat'
-        }
-      }
+      any { label 'kubectl-pod' }
     }
     stages {
         stage('Build') { 
