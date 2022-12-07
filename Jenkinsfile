@@ -29,6 +29,7 @@ pipeline {
             steps {
                 sh "echo 'Now testing...'"
                 sh "helm list -n ${namespace}"
+                sleep 10
                 sh "kubectl get pods -n ${namespace}"
                 sh "kubectl get svc -n ${namespace}"
             }
