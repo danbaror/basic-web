@@ -16,11 +16,11 @@ spec:
   - type: cpu
     metadata:
       type: Utilization
-      value: "50"
+      value: "60"
   - type: memory
     metadata:
       type: Utilization
-      value: "60"
+      value: "75"
   - type: cron
     metadata:
       timezone: Asia/Jerusalem  
