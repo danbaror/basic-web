@@ -22,7 +22,7 @@ pipeline {
             when { expression { return params.action == 'Destroy' } }
             steps {
                 sh "echo ' ---> now Destroying ...'"
-                sh "helm upgrade --install ${release} -n ${namespace} ."
+                sh "helm delete ${release} -n ${namespace}"
             }
         }
         stage('Test') {
