@@ -19,9 +19,9 @@ pipeline {
             }
         }
         stage('Destroy') {
-            when { expression { return params.action == 'Deploy' } }
+            when { expression { return params.action == 'Destroy' } }
             steps {
-                sh "echo 'Deploying...'"
+                sh "echo ' ---> now Destroying ...'"
                 sh "helm upgrade --install ${release} -n ${namespace} ."
             }
         }
