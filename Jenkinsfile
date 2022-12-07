@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh "echo 'building...'"
+                sh "echo ' Now building...'"
                 sh "helm list -n dan"
             }
         }
