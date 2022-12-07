@@ -12,6 +12,14 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when { expression { return params.action == 'Deploy' } }
+            steps {
+                sh "echo 'Deploying...'"
+                sh "helm upgrade --install ${release} -n ${namespace} ."
+            }
+        }
+        stage('Destroy') {
+            when { expression { return params.action == 'Deploy' } }
             steps {
                 sh "echo 'Deploying...'"
                 sh "helm upgrade --install ${release} -n ${namespace} ."
@@ -23,7 +31,6 @@ pipeline {
                 sh "helm list -n ${namespace}"
                 sh "kubectl get pods -n ${namespace}"
                 sh "kubectl get svc -n ${namespace}"
-                sh "kubectl get ingress -n ${namespace}"
             }
         }
     }

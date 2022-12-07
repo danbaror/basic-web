@@ -1,0 +1,27 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: keda-autoscaler
+  namespace: dan
+  labels:
+    deploymentName: simple-web-basic-web
+spec:
+  scaleTargetRef:
+    name: simple-web-basic-web
+  minReplicaCount:  2
+  maxReplicaCount:  10
+  triggers:
+  - type: cpu
+    metadata:
+      type: Utilization
+      value: "50"
+  - type: memory
+    metadata:
+      type: Utilization
+      value: "60"
+  - type: cron
+    metadata:
+      timezone: Asia/Jerusalem  
+      start: 00 08 * * *       # Start every day at 08:00
+      end: 00 00 * * *         # End every day at midnight
+      desiredReplicas: "3"
