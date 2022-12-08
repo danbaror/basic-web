@@ -20,7 +20,7 @@ spec:
   - type: memory
     metadata:
       type: Utilization
-      value: "75"
+      value: "70"
   - type: cron
     metadata:
       timezone: Asia/Jerusalem  
