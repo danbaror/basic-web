@@ -19,8 +19,8 @@ spec:
       value: "50"
   - type: memory
     metadata:
-      type: Utilization
-      value: "60"
+      type: AverageValue
+      value: "10Mi"
   - type: cron
     metadata:
       timezone: Asia/Jerusalem  
