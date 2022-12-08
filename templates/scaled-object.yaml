@@ -20,7 +20,7 @@ spec:
   - type: memory
     metadata:
       type: AverageValue
-      value: "10Mi"
+      value: "60"
   - type: cron
     metadata:
       timezone: Asia/Jerusalem  
